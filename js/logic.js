@@ -26,14 +26,15 @@ window.onload = () => {
         return cyclesGoal == cyclesCompleted;
       }
 
-    if (timesCompleted % 2 == 0) {
+    if (timesCompleted - 2 == 0) {
       currentTime = workTime;
       timesCompleted++;
       timer();
       console.log(
         "Time to work! TC:" + timesCompleted + ", cycles:" + cyclesCompleted
       );
-    } else {
+    } 
+    else  {
       currentTime = breakTime;
       timesCompleted++;
       timer();
@@ -91,7 +92,7 @@ window.onload = () => {
       }
     }
 
-  // Clock
+  // Clock y fix de numeros
   let clockMinutes;
   let clockSeconds;
 

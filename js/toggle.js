@@ -1,6 +1,6 @@
-var toggle = document.getElementById("container");
+let toggle = document.getElementById("container");
 let body = document.querySelector('body');
-var modeScreen = document.getElementById("mode");
+let modeScreen = document.getElementById("mode");
 
 
 toggle.onclick = function() {
