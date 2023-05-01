@@ -1,0 +1,46 @@
+
+body{
+    transition: ease-in 0.3s;
+    background-color: #ffffff;
+}
+#container{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle{
+    border-style: none;
+    width: 5rem;
+    height: 3rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px #c4c4c4, 
+                -3px -3px 8px #FFFFFF;
+}
+
+body.active{
+    transition: ease-in 0.3s;
+    background-color: #0f0f0f;
+}
+
+/* Cambio de texto */
+#mode.active .active-w{
+    display: none;
+}
+#mode.active .active-d{
+    display: flex;
+    background-image: url(../img/icons/moon-solid.svg);
+}
+.active-d{
+    margin-left: 30px;
+    height: 20px;
+    display: none;
+}
+.active-w{
+    margin-left: 0px;
+    height: 20px;
+}
+
+
