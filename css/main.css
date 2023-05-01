@@ -1,44 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,300;0,600;1,500&display=swap');
+/* @import url('./fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold.otf'); */
+
+/* Color de highlight del texto seleccionado */
+::selection { 
+    background: #8db474; /*Color naranja para el fondo*/
+    color:#fff;  /*Color blanco para el texto seleccionado*/
+}
+/* CSS RESET */
 *{
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-body{
-    width: 100vh;
-    height: 100vh;
-    background-color: rgb(30 ,30 ,30);
-}
+/* Estilos de pomodoro */
 .pomodoro-container{
-    padding: 10px;
-    width: 50%;
-    flex-direction: column;
-    border: 1px solid #ff4742;
+    padding: 2rem;
+    width: 40%;
     border-radius: 15px;
-    background-color: #e5403b;
-    box-shadow: rgba(229, 64, 59, 0.8) 0px 8px 24px;
+    background-color: #6c8d67;
+    box-shadow: #6c8d67 0px 8px 24px; 
     text-align: center;
+    /* Centrado de contenido */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-.row-container{
+}.row-container{
     display: flex;
     align-items: center;
-    min-height: 50px;
+    min-height: 4rem;
 }
+
+/* Diseño de reloj */
 .clock-container{
-    padding-top: 2rem;
-    justify-content: flex-end;
+    margin-top: 0rem;
+    justify-content: center;
+    font-family: "KyivType-bold", serif;
+}#clock{
+    font-size: 7.5rem;
+    color:#e5ece4;
+    margin-bottom: 1rem;
 }
-#clock{
-    width: 50%;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 70px;
-    color:#ffffff;
+
+/* Estilo de botones */
+.buttons-options{
+    display: flex;
+    justify-content: center;
+    justify-content:center;
+}#start-button{
+    padding: 12px 14px;
+    color:#EDCBB1;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #333333;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    transition: background-color .2s;
+    font-family: 'Prompt', sans-serif;
+    font-weight: bolder;
+    text-transform:uppercase;
+    margin-right: 2rem;
+}#pause-button{
+    padding: 12px 14px;
+    color:#EDCBB1;
+    font-size: 15px;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    transition: background-color .2s;
+    font-family: 'Prompt', sans-serif;
+    font-weight: bolder;
+    text-transform:uppercase;
+}#start-button:hover{
+    background-color: #C6DEC6;
+    color: #003D00;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+}#pause-button:hover{
+    background-color: #C6DEC6;
+    color: #003D00;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
 }
+
+/* Inputs de tiempo y ciclos */
 .input-container{
     display:flex;
     flex-direction: column;
@@ -46,50 +92,31 @@ body{
     align-items: center;
     width: 25%;
     text-align: center;
-}
-label{
-    text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    color:#ffffff;
-}
-input{
-    padding: 5px;
-    width: 80px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    border: none;
-    background-color: transparent;
-}
-.start-container{
-    justify-content: center;
-}
-#start-button{
-    margin-top: 10px;
-    margin-bottom: 40px;
-    padding: 12px 14px;
-    text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
-    color:#ffffff;
-    font-size: 16px;
+}label{
+    color:#EAE6E5;
+    margin-top: 1.3rem;
+    line-height: 1.3rem;
     font-weight: 500;
+    font-size: 1.4rem;
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+}input{
+    color: #ffffff;
+    margin-top: .7rem; margin-bottom: .7rem;
+    width: 35%;
+    border: none;
+    border-radius: 100%;
+    background-color: transparent;
     cursor: pointer;
-    border: 1px solid #ff4742;
-    border-radius: 6px;
-    background-color: #ff4742;
-    outline: 0;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;;
+    outline-style: none;
+
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+    transition: color .2s;
+}input:hover{
+    color: #c9c9c9;
 }
-#start-button:hover{
-    transition: ease-in-out 0.3s;
-    background-color: #ffffff;
-    font-weight: 600;
-    color: #ff4742;
-}
-.setting-container{
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-    padding-bottom: 20px;
-}
+
+
