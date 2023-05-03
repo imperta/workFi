@@ -1,64 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/toggle.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/toggle.css" />
     <title>workFi</title>
-</head>
-<body>
+  </head>
 
-    <header>
-        <div class="nav-bar">
-            <h1 class="title-page">workFi</h1>
-        </div>
-    </header>
+  <body class="light-mode">
+    
 
-    <div class="pomodoro-container">
+    <main>
+      <div class="pomodoro-container" id="mode">
         <div class="row-container clock-container">
-            <h2 id="clock">25:00</h2>
+          <h2 id="clock">25:00</h2>
         </div>
         <div class="buttons-options">
-            <div class="row-container resume-container">
-                <button id="resume-button" style="display: none;">Resume</button>
-            </div>
-            <div class="row-container start-container">
-                <button id="start-button" style="display: none block;">Start</button>
-            </div>
-            <div class="row-container pause-container">
-                <button id="pause-button" style="display: none block;">Pause</button>
-            </div>
-            <div class="row-container reset-container">
-                <button id="reset-button" style="display: none;">Reset</button>
-            </div>
+          <div class="row-container resume-container">
+            <button id="resume-button" style="display: none">Resume</button>
+          </div>
+          <div class="row-container start-container">
+            <button id="start-button" style="display: none block">Start</button>
+          </div>
+          <div class="row-container pause-container">
+            <button id="pause-button" style="display: none block" disabled>
+              Pause
+            </button>
+          </div>
+          <div class="row-container reset-container">
+            <button id="reset-button" style="display: none">Reset</button>
+          </div>
         </div>
         <div class="row-container settings-container">
-            <div class="input-container">
-                <label for="cycles-input">Pomodoro cycles</label>
-                <input id="cycles-input" type="number" value="1">
-            </div>
-            <div class="input-container">
-                <label for="work-time">work time</label>
-                <input id="work-time" type="text" value="25">
-            </div>
-            <div class="input-container">
-                <label for="break-time">Break Time</label>
-                <input id="break-time" type="text" value="5">
-            </div>
-            <div class="input-container">
-                <label for="rest-time">Rest Time</label>
-                <input id="rest-time" type="text" value="15">
-            </div>
+          <div class="input-container">
+            <label for="cycles-input">Pomodoro cycles</label>
+            <input id="cycles-input" type="number" value="1" />
+          </div>
+          <div class="input-container">
+            <label for="work-time">work time</label>
+            <input id="work-time" type="text" value="25" />
+          </div>
+          <div class="input-container">
+            <label for="break-time">Break Time</label>
+            <input id="break-time" type="text" value="5" />
+          </div>
+          <div class="input-container">
+            <label for="rest-time">Rest Time</label>
+            <input id="rest-time" type="text" value="15" />
+          </div>
         </div>
-    </div>
-
-    <div id="container">
-        <button class="toggle" id="mode"><img class="active-d" src="../img/icons/moon-solid.svg" alt=""><img class="active-w" src="../img/icons/sun-solid.svg" alt=""></button>
-    </div>
-    
-</body>
-    <script src="../js/logic.js"></script>
-    <script src="../js/toggle.js"></script>
+      </div>
+  
+      <div id="container">
+        <button class="toggle" id="button-mode">
+          <img class="active-d" src="../img/icons/moon-solid.svg" alt="" /><img
+            class="active-w"
+            src="../img/icons/sun-solid.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </main>
+  </body>
+  <script src="../js/logic.js"></script>
+  <script src="../js/toggle.js"></script>
 </html>

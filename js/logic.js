@@ -84,10 +84,12 @@ window.onload = () => {
     populateVariables();
     startPomodoro();
     startButton.disabled = true;
+    pauseButton.disabled = false;
   };
 
   pauseButton.onclick = () => {
     clearInterval(interval);
+    pauseButton.style.display = "none";
     resumeButton.style.display = "block";
     startButton.style.display = "none";
     resumeButton.style.display = "block";
@@ -106,6 +108,8 @@ window.onload = () => {
     startButton.style.display = "block";
     resumeButton.style.display = "none";
     resetButton.style.display = "none";
+    pauseButton.style.display = "block";
+    pauseButton.disabled = true;
     console.log("Pomodoro Reseted");
   };
   function startPomodoro() {
