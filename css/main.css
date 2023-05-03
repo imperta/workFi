@@ -171,5 +171,38 @@
 }input:hover{
     color: #c9c9c9;
 }
+.tooltip{
+font-weight: normal;
+color: #E5ECE4;
+position: relative;
+}
 
-/* Diseño de Nav-Bar */
+.tooltip:hover .tooltip-box{
+    display: inline-block;
+}
+.tooltip-box{
+    position: absolute;
+    background-color: #000;
+    line-height: 20px;
+    z-index: 500;
+    text-align: center;
+    color:#fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 20px ;
+    left: 0;
+    right: 0;
+    top:80px;
+    display: none;
+}
+
+.tooltip-box::after{
+    content:"";
+    display: block;
+    border-top: 20px solid #000;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    position: absolute;
+    bottom: -7px;
+    left: calc(70% - 40px);
+}
