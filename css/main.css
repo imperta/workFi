@@ -1,47 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,300;0,600;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,300;0,600;1,500&display=swap");
 /* @import url('./fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold.otf'); */
 
 /* Color de highlight del texto seleccionado */
-::selection { 
-    background: #8db474; /*Color naranja para el fondo*/
-    color:#fff;  /*Color blanco para el texto seleccionado*/
+::selection {
+  background: #8db474; /*Color naranja para el fondo*/
+  color: #fff; /*Color blanco para el texto seleccionado*/
 }
 /* CSS RESET */
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
 /* Variables de algunos estilos repetitivos */
-:root{
-    --text-button-color:#EDCBB1;
-    --button-color:#333333;
-    --text-button-color-hover:#003D00;
-    --button-color-hover:#C6DEC6;
+:root {
+  --text-button-color: #edcbb1;
+  --button-color: #333333;
+  --text-button-color-hover: #003d00;
+  --button-color-hover: #c6dec6;
 
-    --button-text-size:15px;
-    --button-text-font:'Prompt', sans-serif;
+  --button-text-size: 15px;
+  --button-text-font: "Prompt", sans-serif;
 
-    --button-padding:12px 14px;
+  --button-padding: 12px 14px;
 }
 
 /* Estilos de pomodoro */
-.pomodoro-container{
-    padding: 1.5rem;
-    width: 40%;
-    border-radius: 15px;
-    background-color: #6c8d67;
-    box-shadow: #4e803f .1rem .1rem 2rem;
-    text-align: center;
-    /* Centrado de contenido */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}.row-container{
-    display: flex;
-    align-items: center;
-    min-height: 4rem;
+.pomodoro-container {
+  padding: 1.5rem;
+  width: 40%;
+  border-radius: 15px;
+  background-color: #6c8d67;
+  box-shadow: #4e803f 0.1rem 0.1rem 2rem;
+  text-align: center;
+  /* Centrado de contenido */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.row-container {
+  display: flex;
+  align-items: center;
+  min-height: 4rem;
 }
 
 /* header{
@@ -54,155 +55,270 @@
 } */
 
 /* Diseño de reloj */
-.clock-container{
-    margin-top: 0rem;
-    justify-content: center;
-    font-family: "KyivType-bold", serif;
-}#clock{
-    font-size: 5.7rem;
-    color:#E5ECE4;
-    margin-bottom: 1rem;
+.clock-container {
+  margin-top: 0rem;
+  justify-content: center;
+  font-family: "KyivType-bold", serif;
+}
+#clock {
+  font-size: 5.7rem;
+  color: #e5ece4;
+  margin-bottom: 1rem;
 }
 
 /* Estilo de botones */
-.buttons-options{
-    display: flex;
-    justify-content: center;
-}#start-button{
-    margin-right: 1rem;
-    padding: var(--button-padding);
-    color: var(--text-button-color);
-    font-size: var(--button-text-size);
-    cursor: pointer;
-    border-radius: 10px;
-    border-style: none;
-    background-color: var(--button-color);
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-    transition: background-color .2s;
-    font-family: var(--button-text-font);
-    font-weight: bolder;
-    text-transform:uppercase;
-}#pause-button{
-    padding: var(--button-padding);
-    color: var(--text-button-color);
-    font-size: var(--button-text-size);
-    cursor: pointer;
-    border-style: none;
-    border-radius: 10px;
-    background-color: var(--button-color);
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-    transition: background-color .2s;
-    font-family: var(--button-text-font);
-    font-weight: bolder;
-    text-transform:uppercase;
-}#resume-button{
-    margin-right: 2rem;
-    padding: var(--button-padding);
-    color: var(--text-button-color);
-    font-size: var(--button-text-size);
-    cursor: pointer;
-    border-radius: 10px;
-    border-style: none;
-    background-color: var(--button-color);
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-    transition: background-color .2s;
-    font-family: var(--button-text-font);
-    font-weight: bolder;
-    text-transform:uppercase;
-}#reset-button{
-    margin-left: 2rem;
-    padding: var(--button-padding);
-    color:var(--text-button-color);
-    font-size: var(--button-text-size);
-    cursor: pointer;
-    border-style: none;
-    border-radius: 10px;
-    background-color: var(--button-color);
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-    transition: background-color .2s;
-    font-family: var(--button-text-font);
-    font-weight: bolder;
-    text-transform:uppercase;
-}#start-button:hover{
-    background-color: var(--button-color-hover);
-    color: var(--text-button-color-hover);
-}#pause-button:hover{
-    background-color: var(--button-color-hover);
-    color: var(--text-button-color-hover);
-}#resume-button:hover{
-    background-color: var(--button-color-hover);
-    color: var(--text-button-color-hover);
-}#reset-button:hover{
-    background-color: var(--button-color-hover);
-    color: var(--text-button-color-hover);
+.buttons-options {
+  display: flex;
+  justify-content: center;
+}
+#start-button {
+  margin-right: 1rem;
+  padding: var(--button-padding);
+  color: var(--text-button-color);
+  font-size: var(--button-text-size);
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: none;
+  background-color: var(--button-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  transition: background-color 0.2s;
+  font-family: var(--button-text-font);
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+#pause-button {
+  padding: var(--button-padding);
+  color: var(--text-button-color);
+  font-size: var(--button-text-size);
+  cursor: pointer;
+  border-style: none;
+  border-radius: 10px;
+  background-color: var(--button-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  transition: background-color 0.2s;
+  font-family: var(--button-text-font);
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+#resume-button {
+  margin-right: 2rem;
+  padding: var(--button-padding);
+  color: var(--text-button-color);
+  font-size: var(--button-text-size);
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: none;
+  background-color: var(--button-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  transition: background-color 0.2s;
+  font-family: var(--button-text-font);
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+#start-button:hover {
+  background-color: var(--button-color-hover);
+  color: var(--text-button-color-hover);
+}
+#pause-button:hover {
+  background-color: var(--button-color-hover);
+  color: var(--text-button-color-hover);
+}
+#resume-button:hover {
+  background-color: var(--button-color-hover);
+  color: var(--text-button-color-hover);
 }
 
 /* Inputs de tiempo y ciclos */
-.input-container{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 25%;
-    text-align: center;
-}label{
-    color:#EAE6E5;
-    margin-top: 1.3rem;
-    line-height: 1.3rem;
-    font-weight: 500;
-    font-size: 1.4rem;
-    font-family: 'Prompt', sans-serif;
-    text-align: center;
-    text-transform: capitalize;
-}input{
-    color: #ffffff;
-    margin-top: .7rem; margin-bottom: .7rem;
-    width: 35%;
-    border: none;
-    border-radius: 100%;
-    background-color: transparent;
-    cursor: pointer;
-    outline-style: none;
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  text-align: center;
+}
+label {
+  color: #eae6e5;
+  margin-top: 1.3rem;
+  line-height: 1.3rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+  font-family: "Prompt", sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+}
+input {
+  color: #ffffff;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  width: 35%;
+  border: none;
+  border-radius: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  outline-style: none;
 
-    font-size: 20px;
-    font-family: 'Prompt', sans-serif;
-    text-align: center;
-    transition: color .2s;
-}input:hover{
-    color: #c9c9c9;
+  font-size: 20px;
+  font-family: "Prompt", sans-serif;
+  text-align: center;
+  transition: color 0.2s;
 }
-.tooltip{
-font-weight: normal;
-color: #E5ECE4;
-position: relative;
+input:hover {
+  color: #c9c9c9;
 }
 
-.tooltip:hover .tooltip-box{
-    display: inline-block;
+.info-logo {
+  height: 15px;
+  filter: invert();
 }
-.tooltip-box{
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltip-box {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip box */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -6rem;
+  width: 200px; /* Ancho del cuadro donde esta el mensaje */
+
+  /* Fade in the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip:hover .tooltip-box {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Diseño de Mensaje temporal */
+.toast {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #8db474;
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+.toast.active-m {
+  transform: translateX(0%);
+}
+
+.toast-dark {
     position: absolute;
-    background-color: #000;
-    line-height: 20px;
-    z-index: 500;
-    text-align: center;
-    color:#fff;
-    font-size: 14px;
-    padding: 5px 10px;
-    border-radius: 20px ;
+    top: 25px;
+    right: 30px;
+    border-radius: 12px;
+    padding: 20px 35px 20px 25px;
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+  }
+  .toast-dark.active {
+    color: #fff;
+    background: #161616;
+    border-left: 6px solid #7f9c7f;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+.toast .toast-content {
+  display: flex;
+  align-items: center;
+}
+.toast-content .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  background-color: #8db474;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+}
+.toast-content .message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+.message.text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #666666;
+}
+.message .text .text-1 {
+  font-weight: 600;
+  color: #333;
+}
+
+.toast .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.toast .close:hover {
+  opacity: 1;
+}
+.toast .progress {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #333;
+}
+.toast .progress::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #eeeef0;
+}
+.toast .progress-d {
+    position: absolute;
+    bottom: 0px;
     left: 0;
-    right: 0;
-    top:80px;
-    display: none;
-}
-
-.tooltip-box::after{
-    content:"";
-    display: block;
-    border-top: 20px solid #000;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
+    height: 3px;
+    width: 100%;
+    background: #333;
+  }
+.toast .progress-d::before {
+    content: "";
     position: absolute;
-    bottom: -7px;
-    left: calc(70% - 40px);
+    bottom: 0px;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #7f9c7f;
+  }
+
+/* Animacion de la barra de tiempo */
+/* Aqui puedo modificar el tiempo en el que tarda en mostrarse en pantalla, este debe estar bien vinculado con el TimeOut del codigo en JS */
+.progress.active-m::before {
+  animation: progress 5s linear forwards;
+}
+@keyframes progress {
+  100% {
+    right: 100%;
+  }
 }

@@ -27,64 +27,75 @@
               Pause
             </button>
           </div>
-          <div class="row-container reset-container">
-            <button id="reset-button" style="display: none">Reset</button>
-          </div>
         </div>
         <div class="row-container settings-container">
           <div class="input-container">
             <label for="cycles-input">Pomodoro cycles </label>
-            <input id="cycles-input" type="number" value="1" />
+            <input id="cycles-input" type="number" />
             <b class="tooltip">
               <img
                 src="../img/icons/circle-info-solid.svg"
                 alt=""
-                height="15px"
+                class="info-logo"
               />
-              <span class="tooltip-box">Loremmmm</span>
+              <span class="tooltip-box"
+                >Un ciclo en un pomodoro se refiere al proceso completo de
+                trabajo y descanso.</span
+              >
             </b>
           </div>
           <div class="input-container">
-            <label for="work-time">work time </label>
-            <input id="work-time" type="text" value="25" />
+            <label for="work-time">Work time </label>
+            <input id="work-time" type="text" />
             <b class="tooltip">
               <img
+                class="info-logo"
                 src="../img/icons/circle-info-solid.svg"
                 alt=""
-                height="15px"
               />
-              <span class="tooltip-box">Loremmmm</span>
+              <span class="tooltip-box"
+                >Se refiere a la duración en la que te enfocas en una tarea
+                determinada antes de tomar un breve descanso.</span
+              >
             </b>
           </div>
           <div class="input-container">
             <label for="break-time">Break time</label>
-            <input id="break-time" type="text" value="5" />
+            <input id="break-time" type="text" />
             <b class="tooltip">
               <img
                 src="../img/icons/circle-info-solid.svg"
                 alt=""
-                height="15px"
+                class="info-logo"
               />
-              <span class="tooltip-box">Loremmmm</span>
+              <span class="tooltip-box"
+                >Se refiere al breve descanso que se toma después de completar
+                un período de trabajo de 25 minutos.</span
+              >
             </b>
           </div>
           <div class="input-container">
             <label for="rest-time">Rest Time </label>
-            <input id="rest-time" type="text" value="15" />
+            <input id="rest-time" type="text" />
             <b class="tooltip">
               <img
                 src="../img/icons/circle-info-solid.svg"
                 alt=""
-                height="15px"
+                class="info-logo"
               />
-              <span class="tooltip-box">Loremmmm</span>
+              <span class="tooltip-box"
+                >El tiempo de descanso largo en un pomodoro se refiere al
+                período de descanso más prolongado que se toma después de
+                completar cuatro ciclos de trabajo y descanso.</span
+              >
             </b>
           </div>
         </div>
       </div>
 
       <div id="container">
-        <button class="toggle" id="button-mode">
+        <button id="reset-button" class="toast-button">Reset</button>
+        <button class="toggle " id="button-mode">
           <img class="active-d" src="../img/icons/moon-solid.svg" alt="" /><img
             class="active-w"
             src="../img/icons/sun-solid.svg"
@@ -92,12 +103,20 @@
           />
         </button>
       </div>
+      <div class="toast toast-dark">
+        <div class="toast-content">  
+          <i class="check"><img src="../img/icons/check-solid.svg" alt="" style="filter:invert()"></i>
+          <div class="message">
+            <span class="text text-1">Success</span>
+            <span class="text text-1">Pomodoro Reset</span>
+          </div>
+        </div>
+        <i class="xmark close">Close</i>
+        <div class="progress progress-d"></div>
+      </div> 
     </main>
   </body>
   <script src="../js/logic.js"></script>
   <script src="../js/toggle.js"></script>
-  <script
-    src="https://kit.fontawesome.com/02a9e89c42.js"
-    crossorigin="anonymous"
-  ></script>
+  <!-- <script src="../js/defaultvalues.js"></script> -->
 </html>

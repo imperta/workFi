@@ -89,25 +89,20 @@ window.onload = () => {
 
   pauseButton.onclick = () => {
     clearInterval(interval);
-    pauseButton.style.display = "none";
     resumeButton.style.display = "block";
     startButton.style.display = "none";
     resumeButton.style.display = "block";
-    resetButton.style.display = "block";
+    resumeButton.disabled = false;
   };
-
   resumeButton.onclick = () => {
     timer();
-    pauseButton.style.display = "block";
     resumeButton.style.display = "block";
-    resumeButton.style.display = "none";
+    resumeButton.disabled = true;
   };
-
   resetButton.onclick = () => {
     resetPomodoro();
     startButton.style.display = "block";
     resumeButton.style.display = "none";
-    resetButton.style.display = "none";
     pauseButton.style.display = "block";
     pauseButton.disabled = true;
     console.log("Pomodoro Reseted");
@@ -157,3 +152,45 @@ window.onload = () => {
     }
   }
 };
+
+// Mensaje tooltip
+const tooltips = document.querySelectorAll('.tooltip');
+
+tooltips.forEach((tooltip) => {
+  tooltip.addEventListener('mouseenter', () => {
+    tooltip.querySelector('.tooltip-box').style.display = 'block';
+  });
+
+  tooltip.addEventListener('mouseleave', () => {
+    tooltip.querySelector('.tooltip-box').style.display = 'none';
+  });
+});
+
+
+
+// Mensajes temporales
+const button = document.querySelector(".toast-button"),
+      toast = document.querySelector(".toast")
+      closeIcon = document.querySelector(".close"),
+      progress = document.querySelector(".progress");
+
+      button.addEventListener("click", () => {
+        toast.classList.add("active-m");
+        progress.classList.add("active-m");
+
+        setTimeout(() =>{
+          toast.classList.remove("active-m");
+        }, 5000); //1s = 1000 milisegundos
+
+        setTimeout(() =>{
+          progress.classList.remove("active-m");
+        }, 3300);
+      });
+
+      closeIcon.addEventListener("click", () => {
+        toast.classList.remove("active-m");
+
+        setTimeout(() =>{
+          progress.classList.remove("active-m");
+        }, 100);
+      });

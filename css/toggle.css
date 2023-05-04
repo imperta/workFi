@@ -1,15 +1,19 @@
 body{
     transition: 0.4s;
+    overflow: hidden;
 }
 #container{
     position: absolute;
     bottom: 0%;
     right: 0%;
-    transform: translate(-50%, -50%);
+    /* Posicion de los botones */
+    transform: translate(-15%, -50%);
     filter: invert();
+    display: flex;
 }
 
 .toggle{
+  right: 0;
     border-style: none;
     width: 5rem;
     height: 3rem;
@@ -63,201 +67,29 @@ body{
     box-shadow: #bebebe .1rem .1rem 2rem; 
 }
 
+.toast-button{
+  color:var(--text-button-color);
+  font-size: var(--button-text-size);
+  cursor: pointer;
+  border-style: none;
+  border-radius: 10px;
+  width: 5rem;
+  height: 3rem;
+  background-color: var(--button-color);
+  box-shadow: 3px 3px 8px #5a5a5a, 
+  -3px -3px 8px #8f8f8f;
+  transition: background-color .2s;
+  font-family: var(--button-text-font);
+  font-weight: bolder;
+  text-transform:uppercase;
 
-/* Menu / Barra de navegacion
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: rgba(95, 95, 95, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 1rem;
-    position: fixed;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    width: 100%;
-    max-width: 95%;
-  }
-  
-  .logo a {
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  .menu {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu li a {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: #fff;
-    margin-left: 30px;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  .menu li a:hover {
-    color: #c7ecee;
-  }
-  
-  .toggle-menu {
-    display: none;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    nav {
-      padding: 10px 20px;
-    }
-    
-    .logo {
-      margin-right: auto;
-    }
-    
-    .menu {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 80px;
-      right: 20px;
-      width: 10%;
-      background-color: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      z-index: 99;
-    }
-    
-    .menu li {
-      margin: 10px 0;
-    }
-    
-    .toggle-menu {
-      display: block;
-      font-size: 1.5rem;
-      color: #fff;
-      cursor: pointer;
-    }
-    
-    .menu.active {
-      display: flex;
-    }
-  } */
+  margin-right: .7rem;
+}
+.toast-button:hover{
+  background-color: var(--button-color-hover);
+  color: var(--text-button-color-hover);
+}
 
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    width: 50%;
-    top: 0;
-    left: 0;
-  }
-  
-  .logo-container {
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin: 0 10px;
-  }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  .burger {
-    display: none;
-    cursor: pointer;
-  }
-  
-  .burger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .nav-links {
-      position: fixed;
-      height: 100vh;
-      width: 20%;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #242526;
-      top: 80px;
-      left: -100%;
-      transition: all 0.5s ease;
-    }
-  
-    .nav-links li {
-      opacity: 0;
-    }
-  
-    .burger {
-      display: block;
-    }
-  }
-  
-  .nav-active {
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-  }
-  
-  .line1 {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  .line2 {
-    opacity: 0;
-  }
-  
-  .line3 {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
   
 
 
