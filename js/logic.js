@@ -184,7 +184,7 @@ const button = document.querySelector(".toast-button"),
 
         setTimeout(() =>{
           progress.classList.remove("active-m");
-        }, 3300);
+        }, 5300);
       });
 
       closeIcon.addEventListener("click", () => {
@@ -192,5 +192,7 @@ const button = document.querySelector(".toast-button"),
 
         setTimeout(() =>{
           progress.classList.remove("active-m");
-        }, 100);
+        }, 300);
       });
+
+
