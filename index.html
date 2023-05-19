@@ -21,23 +21,6 @@
 
     <header>
       <div class="row-container-mode settings-container">
-        <!-- Ciclos -->
-        <div class="input-container" style="display: none">
-          <label for="cycles-input">Pomodoro cycles </label>
-          <input id="cycles-input" type="number" />
-          <b class="tooltip">
-            <img
-              src="./img/icons/circle-info-solid.svg"
-              alt=""
-              class="info-logo"
-            />
-            <span class="tooltip-box"
-              >Un ciclo en un pomodoro se refiere al proceso completo de trabajo
-              y descanso.</span
-            >
-          </b>
-        </div>
-
         <!-- Worktime -->
         <div class="input-container">
           <button
@@ -46,18 +29,6 @@
           >
             Work time
           </button>
-          <input id="work-time" type="text" style="display: none" />
-          <!-- <b class="tooltip">
-            <img
-              class="info-logo"
-              src="./img/icons/circle-info-solid.svg"
-              alt=""
-            />
-            <span class="tooltip-box"
-              >Se refiere a la duración en la que te enfocas en una tarea
-              determinada antes de tomar un breve descanso.</span
-            >
-          </b> -->
         </div>
         <div class="input-container">
           <button
@@ -66,18 +37,6 @@
           >
             short break
           </button>
-          <input id="break-time" type="text" style="display: none" />
-          <!-- <b class="tooltip">
-            <img
-              src="./img/icons/circle-info-solid.svg"
-              alt=""
-              class="info-logo"
-            />
-            <span class="tooltip-box"
-              >Se refiere al breve descanso que se toma después de completar un
-              período de trabajo de 25 minutos.</span
-            >
-          </b> -->
         </div>
         <div class="input-container">
           <button
@@ -86,19 +45,6 @@
           >
             long break
           </button>
-          <input id="rest-time" type="text" style="display: none" />
-          <!-- <b class="tooltip">
-            <img
-              src="./img/icons/circle-info-solid.svg"
-              alt=""
-              class="info-logo"
-            />
-            <span class="tooltip-box"
-              >El tiempo de descanso largo en un pomodoro se refiere al período
-              de descanso más prolongado que se toma después de completar cuatro
-              ciclos de trabajo y descanso.</span
-            >
-          </b> -->
         </div>
       </div>
     </header>
@@ -126,7 +72,6 @@
 
     <footer>
       <div id="container">
-        <button id="reset-button" class="toast-button">reset</button>
         <button class="toggle" id="button-mode">
           <img class="active-d" src="./img/icons/moon-solid.svg" alt="" /><img
             class="active-w"
@@ -136,28 +81,106 @@
         </button>
       </div>
       <!-- Menu Desplegable-->
-      <!-- <nav>
+      <nav>
         <span id="open-close">
           <i class="bx bx-menu"></i>
         </span>
       </nav>
-      <aside id="aside">
+      <aside id="aside" class="cerrado">
         <div class="container-svg">
-          <div><span>INTRO</span></div>
-          <div><span>INTRO</span></div>
-          <div><span>INTRO</span></div>
+          <div>
+            <i class="bx bx-timer"></i>
+            <span>Timer (minutes)</span>
+          </div>
+          <!-- Ciclos -->
+          <div class="input-container">
+            <!-- Worktime -->
+            <div class="slide-config">
+              <label for="work-input">Pomodoro</label>
+              <input id="work-time" type="text" />
+              <!-- <b class="tooltip">
+                <img
+                  class="info-logo"
+                  src="./img/icons/circle-info-solid.svg"
+                  alt=""
+                />
+                <span class="tooltip-box"
+                  >Se refiere a la duración en la que te enfocas en una tarea
+                  determinada antes de tomar un breve descanso.</span
+                >
+              </b> -->
+            </div>
+            <!-- Rest Time -->
+            <div class="slide-config">
+              <label for="rest-input">Rest time </label>
+              <input id="rest-time" type="text" />
+              <!-- <b class="tooltip">
+                <img
+                  src="./img/icons/circle-info-solid.svg"
+                  alt=""
+                  class="info-logo"
+                />
+                <span class="tooltip-box"
+                  >El tiempo de descanso largo en un pomodoro se refiere al
+                  período de descanso más prolongado que se toma después de
+                  completar cuatro ciclos de trabajo y descanso.</span
+                >
+              </b> -->
+            </div>
+            <!-- Break time -->
+            <div class="slide-config">
+              <label for="break-input">Break Time </label>
+              <input id="break-time" type="text" />
+              <!-- <b class="tooltip">
+                <img
+                  src="./img/icons/circle-info-solid.svg"
+                  alt=""
+                  class="info-logo"
+                />
+                <span class="tooltip-box"
+                  >Se refiere al breve descanso que se toma después de completar
+                  un período de trabajo de 25 minutos.</span
+                >
+              </b> -->
+            </div>
+
+            <!-- Ciclos de pomodoro -->
+            <div class="slide-config">
+              <label for="cycles-input">Cycles</label>
+              <input id="cycles-input" type="number" />
+              <!-- <b class="tooltip">
+                <img
+                  src="./img/icons/circle-info-solid.svg"
+                  alt=""
+                  class="info-logo"
+                />
+                <span class="tooltip-box"
+                  >Un ciclo en un pomodoro se refiere al proceso completo de
+                  trabajo y descanso.</span
+                >
+              </b> -->
+            </div>
+          </div>
+          <button id="reset-button" class="toast-button">reset</button>
+        </div>
+
+        <div class="container-svg">
+          <div>
+            <i class="bx bx-cheese"></i>
+            <span>Support me</span>
+          </div>
+          <div class="buttons-support">
+            <button>Buy me a coffee</button>
+            <button>Twitter</button>
+          </div>
         </div>
         <div class="container-svg">
-          <div><span>INTRO</span></div>
-          <div><span>INTRO</span></div>
-          <div><span>INTRO</span></div>
+          <div>
+            <i class="bx bx-edit"></i>
+            <span>Patch Notes</span>
+          </div>
         </div>
-        <div class="container-svg">
-          <div><span>INTRO</span></div>
-          <div><span>INTRO</span></div>
-          <div><span>INTRO</span></div>
-        </div>
-      </aside> -->
+      </aside>
     </footer>
   </body>
   <script src="./js/logic.js"></script>

@@ -191,22 +191,6 @@ body {
   opacity: 1;
 }
 
-/* input {
-  color: #ffffff;
-  margin-top: 0.7rem;
-  margin-bottom: 0.7rem;
-  width: 35%;
-  border: none;
-  border-radius: 100%;
-  background-color: transparent;
-  cursor: pointer;
-  outline-style: none;
-
-  font-size: 20px;
-  text-align: center;
-  transition: color 0.2s;
-} */
-
 /* Loader styles */
 .wrapper {
   position: fixed;
@@ -215,7 +199,7 @@ body {
   background-color: #5d5b66;
   display: grid;
   place-items: center;
-  transition: opacity 1s, visibility 1s;
+  transition: opacity 0.6s, visibility 1s;
 }
 .fade {
   opacity: 0;
@@ -230,64 +214,105 @@ body {
   --text-color: #e7e7e7;
 }
 
-/* footer {
-  font-size: 60%;
-} */
-
-/* footer nav {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 10px 20px;
-  position: fixed;
-  border-bottom: 1px solid var(--border-color);
-} */
+/* Tamaño de boton de slider */
 nav span i {
   color: #fff;
-  font-size: 2.7rem;
+  font-size: 5rem;
   cursor: pointer;
 
+  z-index: 1;
   position: absolute;
   bottom: 0;
   right: 0;
 }
 
+/*Estilos de slide */
 aside {
-  background-color: var(--items-color);
+  background-color: #000000;
+  opacity: 100%;
   width: 30rem;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   overflow-y: hidden;
-  margin-bottom: 59px;
+  margin-bottom: 5px;
   transition: 0.4s;
+  padding-top: 1.3rem;
 }
-
+.slide-config {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
 aside:hover {
   overflow-y: auto;
 }
 .desplegar {
   transform: translateX(100%);
 }
-.container-svg {
-  border-bottom: 1px solid var(--border-color);
-  padding: 10px;
-  color: var(--text-color);
+.cerrado {
+  display: none;
 }
-
+.container-svg {
+  /* border-bottom: 1px solid var(--border-color); */
+  padding: 1rem;
+  color: #fff;
+}
 .container-svg div {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
-  cursor: pointer;
+  padding: 0.5rem;
 }
-
-.container-svg div:hover {
-  background-color: #303030;
-}
-
 .container-svg div span {
   /* margin-left: 15px; */
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+}
+/* Ajustes de inputs */
+input {
+  background-color: #8b879b;
+  color: #2d2d2d;
+  margin-top: 0.4rem;
+  padding: 0.6rem;
+  width: 4rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  outline-style: none;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  /* transition: color 0.2s; */
+}
+label {
+  color: #eae6e5;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+/* Botones soporte */
+.buttons-support {
+  justify-content: center;
+  display: flex;
+  padding: 20px;
+}
+.buttons-support button {
+  background-color: #8b879b;
+  color: #000000;
+
+  border-radius: 0.7rem;
+  border-style: none;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 90%;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+.buttons-support button:hover {
+  filter: invert(100%);
 }
