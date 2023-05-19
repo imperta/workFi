@@ -251,20 +251,40 @@ window.onload = () => {
       //   console.log("El Temporizador Terminó");
     }
   }
+
+  // Mensaje tooltip
+  const tooltips = document.querySelectorAll(".tooltip");
+
+  tooltips.forEach((tooltip) => {
+    tooltip.addEventListener("mouseenter", () => {
+      tooltip.querySelector(".tooltip-box").style.display = "block";
+    });
+
+    tooltip.addEventListener("mouseleave", () => {
+      tooltip.querySelector(".tooltip-box").style.display = "none";
+    });
+  });
+
+  // Animacion de slider
+  const openClose = document.getElementById("open-close"),
+    aside = document.getElementById("aside");
+
+  // Funcion para evitar que se abra el slider automaticamente
+  function openSlider() {
+    if (aside.classList.contains("cerrado")) {
+      aside.classList.remove("cerrado");
+      aside.classList.add("desplegar");
+    } else {
+      aside.classList.remove("desplegar");
+    }
+  }
+  openSlider();
+
+  // Modo para abrir el slider
+  openClose.addEventListener("click", () => {
+    aside.classList.toggle("desplegar");
+  });
 };
-
-// Mensaje tooltip
-// const tooltips = document.querySelectorAll(".tooltip");
-
-// tooltips.forEach((tooltip) => {
-//   tooltip.addEventListener("mouseenter", () => {
-//     tooltip.querySelector(".tooltip-box").style.display = "block";
-//   });
-
-//   tooltip.addEventListener("mouseleave", () => {
-//     tooltip.querySelector(".tooltip-box").style.display = "none";
-//   });
-// });
 
 //Animacion de loader de la pagina
 const fadeOut = () => {
@@ -272,11 +292,3 @@ const fadeOut = () => {
   loaderWrapper.classList.add("fade");
 };
 window.addEventListener("load", fadeOut);
-
-// Animacion de slider
-const $openClose = document.getElementById("open-close"),
-  $aside = document.getElementById("aside");
-
-$openClose.addEventListener("click", () => {
-  $aside.classList.toggle("desplegar");
-});
