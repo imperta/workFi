@@ -1,97 +1,100 @@
-body{
-    transition: 0.4s;
-    overflow: hidden;
+body {
+  transition: 0.4s;
+  overflow: hidden;
 }
-#container{
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
-    /* Posicion de los botones */
-    transform: translate(-15%, -50%);
-    filter: invert();
-    display: flex;
+#container {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  /* Posicion de los botones */
+  transform: translate(-15%, -50%);
+  filter: invert();
+  display: flex;
 }
 
-.toggle{
+.toggle {
   right: 0;
-    border-style: none;
-    width: 5rem;
-    height: 3rem;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 3px 3px 8px #5a5a5a, 
-                -3px -3px 8px #8f8f8f;
-    cursor: pointer;
-    transition: background-color, filter .3s;
+  border-style: none;
+  width: 5rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px #5a5a5a, -3px -3px 8px #8f8f8f;
+  cursor: pointer;
+  transition: background-color, filter 0.3s;
 }
 
-.toggle:hover{
-    filter: invert(100%);
-    box-shadow: 3px 3px 8px #616161, 
+.toggle:hover {
+  filter: invert(100%);
+  box-shadow: 3px 3px 8px #616161;
 }
-
 
 /* Cambio de texto */
-#mode.active .active-w{
-    display: none;
+#mode.active .active-w {
+  display: none;
 }
-#mode.active .active-d{
-    display: flex;
-    background-image: url(../img/icons/moon-solid.svg);
+#mode.active .active-d {
+  display: flex;
+  background-image: url(../img/icons/moon-solid.svg);
 }
-.active-d{
-    margin-left: 32px;
-    height: 20px;
-    display: none;
+.active-d {
+  margin-left: 32px;
+  height: 20px;
+  display: none;
 }
-.active-w{
-    margin-left: 0px;
-    height: 20px;
-}
-
-.dark-mode{
-    background-color: #141414;
+.active-w {
+  margin-left: 0px;
+  height: 20px;
 }
 
-.light-mode{
-    background-color: #dbdbdb;
+.dark-mode {
+  background-color: #1b1b1b;
+}
+
+.light-mode {
+  background-color: #8b879b;
 }
 
 .active-bg {
-    background-color: #141414;
-    transition: 0.4s;
+  background-color: #141414;
+  transition: 0.4s;
 }
 
 .active-container {
-    background-color: #222222;
-    box-shadow: #bebebe .1rem .1rem 2rem; 
+  background-color: #222222;
+  box-shadow: #bebebe 0.1rem 0.1rem 2rem;
 }
 
-.toast-button{
-  color:var(--text-button-color);
-  font-size: var(--button-text-size);
-  cursor: pointer;
-  border-style: none;
-  border-radius: 10px;
-  width: 5rem;
-  height: 3rem;
-  background-color: var(--button-color);
-  box-shadow: 3px 3px 8px #5a5a5a, 
-  -3px -3px 8px #8f8f8f;
-  transition: background-color .2s;
-  font-family: var(--button-text-font);
-  font-weight: bolder;
-  text-transform:uppercase;
-
-  margin-right: .7rem;
-}
-.toast-button:hover{
-  background-color: var(--button-color-hover);
-  color: var(--text-button-color-hover);
+/* Estilos del pomodoro en modo oscuro */
+.dark-mode .pomodoro-container {
+  background-color: #946cc3;
+  box-shadow: #5a5a5a 0.1rem 0.1rem 2rem;
 }
 
-  
+.dark-mode .buttons-options button {
+  background-color: #1b1b1b;
+  color: #946cc3;
+}
 
+.dark-mode .buttons-options button:hover {
+  background-color: #474747;
+  color: #a295b1;
+}
 
+.dark-mode .button-mode-pom {
+  color: #946cc3;
+}
 
+.dark-mode .row-container-mode {
+  background-color: #000000;
+}
 
+.dark-mode .button-mode-selection-w.active {
+  background-color: #212122;
+}
+.dark-mode .button-mode-selection-s.active {
+  background-color: #212122;
+}
+.dark-mode .button-mode-selection-l.active {
+  background-color: #212122;
+}

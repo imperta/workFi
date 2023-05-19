@@ -1,10 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,300;0,600;1,500&display=swap");
-/* @import url('./fonts/Dmitry\ Rastvortsev\ -\ KyivType\ Sans\ Bold.otf'); */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700;900&display=swap");
 
-/* Color de highlight del texto seleccionado */
-::selection {
-  background: #8db474; /*Color naranja para el fondo*/
-  color: #fff; /*Color blanco para el texto seleccionado*/
+body {
+  font-family: "Inter", sans-serif;
 }
 /* CSS RESET */
 * {
@@ -14,55 +11,38 @@
 
 /* Variables de algunos estilos repetitivos */
 :root {
-  --text-button-color: #edcbb1;
-  --button-color: #333333;
-  --text-button-color-hover: #003d00;
-  --button-color-hover: #c6dec6;
-
-  --button-text-size: 15px;
-  --button-text-font: "Prompt", sans-serif;
-
-  --button-padding: 12px 14px;
+  --button-text-size: 1.4rem;
+  --button-padding: 1rem 2rem;
 }
 
 /* Estilos de pomodoro */
 .pomodoro-container {
-  padding: 1.5rem;
-  width: 40%;
-  border-radius: 15px;
-  background-color: #6c8d67;
-  box-shadow: #4e803f 0.1rem 0.1rem 2rem;
+  display: inline-block;
+  justify-content: center;
   text-align: center;
+
+  padding: 2rem;
+  width: 20rem;
+  height: 15rem;
+  border-radius: 2rem;
+  background-color: #c2bdd3;
+  box-shadow: #000000 0.1rem 0.1rem 2rem;
+  /* text-align: center; */
   /* Centrado de contenido */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.row-container {
-  display: flex;
-  align-items: center;
-  min-height: 4rem;
-}
-
-/* header{
-    background: rgba( 14, 14, 14, 0.2 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 5px );
-    -webkit-backdrop-filter: blur( 5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-} */
 
 /* Diseño de reloj */
 .clock-container {
-  margin-top: 0rem;
-  justify-content: center;
-  font-family: "KyivType-bold", serif;
+  margin-top: 1.7rem;
 }
 #clock {
+  padding: 1rem;
   font-size: 5.7rem;
-  color: #e5ece4;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
@@ -71,100 +51,110 @@
   display: flex;
   justify-content: center;
 }
-#start-button {
-  margin-right: 1rem;
-  padding: var(--button-padding);
-  color: var(--text-button-color);
-  font-size: var(--button-text-size);
+.buttons-options button {
+  background-color: #8b879b;
+  color: #000000;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   cursor: pointer;
+  transition: background-color 0.2s;
+  padding: var(--button-padding);
+  font-size: var(--button-text-size);
+  border-style: none;
+  font-weight: bolder;
+}
+.buttons-options button:hover {
+  background-color: #696674;
+}
+#start-button {
   border-radius: 10px;
   border-style: none;
-  background-color: var(--button-color);
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  transition: background-color 0.2s;
-  font-family: var(--button-text-font);
   font-weight: bolder;
-  text-transform: uppercase;
 }
 #pause-button {
-  padding: var(--button-padding);
-  color: var(--text-button-color);
-  font-size: var(--button-text-size);
-  cursor: pointer;
   border-style: none;
   border-radius: 10px;
-  background-color: var(--button-color);
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  transition: background-color 0.2s;
-  font-family: var(--button-text-font);
   font-weight: bolder;
-  text-transform: uppercase;
+  display: none;
 }
 #resume-button {
+  border-radius: 10px;
+}
+#reset-button {
   margin-right: 2rem;
   padding: var(--button-padding);
-  color: var(--text-button-color);
   font-size: var(--button-text-size);
+  color: var(--text-button-color);
   cursor: pointer;
   border-radius: 10px;
   border-style: none;
   background-color: var(--button-color);
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   transition: background-color 0.2s;
-  font-family: var(--button-text-font);
   font-weight: bolder;
-  text-transform: uppercase;
 }
-#start-button:hover {
-  background-color: var(--button-color-hover);
-  color: var(--text-button-color-hover);
-}
-#pause-button:hover {
-  background-color: var(--button-color-hover);
-  color: var(--text-button-color-hover);
-}
-#resume-button:hover {
+#reset-button:hover {
   background-color: var(--button-color-hover);
   color: var(--text-button-color-hover);
 }
 
-/* Inputs de tiempo y ciclos */
-.input-container {
+.row-container-mode {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  text-align: center;
-}
-label {
-  color: #eae6e5;
-  margin-top: 1.3rem;
-  line-height: 1.3rem;
-  font-weight: 500;
-  font-size: 1.4rem;
-  font-family: "Prompt", sans-serif;
-  text-align: center;
-  text-transform: capitalize;
-}
-input {
-  color: #ffffff;
-  margin-top: 0.7rem;
-  margin-bottom: 0.7rem;
-  width: 35%;
-  border: none;
-  border-radius: 100%;
-  background-color: transparent;
-  cursor: pointer;
-  outline-style: none;
+  background-color: #c2bdd3;
 
-  font-size: 20px;
-  font-family: "Prompt", sans-serif;
-  text-align: center;
-  transition: color 0.2s;
+  width: 32rem;
+  border-radius: 1rem;
+
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-input:hover {
-  color: #c9c9c9;
+
+.button-mode-pom {
+  color: #000000;
+  font-weight: 700;
+  text-transform: lowercase;
+  border-style: none;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+
+  font-size: 1.22rem;
+  letter-spacing: 1px;
+  margin: 1rem;
+  font-family: "Inter";
+  transition: background-color 0.5s ease-out;
+}
+
+.button-mode-selection-w.active {
+  border-radius: 1rem;
+  background-color: #8b879b;
+  color: #111111;
+}
+.button-mode-selection-s.active {
+  border-radius: 1rem;
+  background-color: #8b879b;
+  color: #111111;
+}
+.button-mode-selection-l.active {
+  border-radius: 1rem;
+  background-color: #8b879b;
+  color: #111111;
+}
+
+.button-mode-selection-w {
+  color: #000000;
+  padding: 0.7rem;
+}
+.button-mode-selection-s {
+  color: #000000;
+  padding: 0.7rem;
+}
+.button-mode-selection-l {
+  color: #000000;
+  padding: 0.7rem;
 }
 
 .info-logo {
@@ -201,124 +191,103 @@ input:hover {
   opacity: 1;
 }
 
-/* Diseño de Mensaje temporal */
-.toast {
-  position: absolute;
-  top: 25px;
-  right: 30px;
-  border-radius: 12px;
-  background: #fff;
-  padding: 20px 35px 20px 25px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  border-left: 6px solid #8db474;
-  overflow: hidden;
-  transform: translateX(calc(100% + 30px));
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
-}
-.toast.active-m {
-  transform: translateX(0%);
-}
-
-.toast-dark {
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    border-radius: 12px;
-    padding: 20px 35px 20px 25px;
-    overflow: hidden;
-    transform: translateX(calc(100% + 30px));
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
-  }
-  .toast-dark.active {
-    color: #fff;
-    background: #161616;
-    border-left: 6px solid #7f9c7f;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
-
-.toast .toast-content {
-  display: flex;
-  align-items: center;
-}
-.toast-content .check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 35px;
-  width: 35px;
-  background-color: #8db474;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 50%;
-}
-.toast-content .message {
-  display: flex;
-  flex-direction: column;
-  margin: 0 20px;
-}
-.message.text {
-  font-size: 20px;
-  font-weight: 600;
-  color: #666666;
-}
-.message .text .text-1 {
-  font-weight: 600;
-  color: #333;
-}
-
-.toast .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  padding: 5px;
+/* input {
+  color: #ffffff;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  width: 35%;
+  border: none;
+  border-radius: 100%;
+  background-color: transparent;
   cursor: pointer;
-  opacity: 0.7;
-}
-.toast .close:hover {
-  opacity: 1;
-}
-.toast .progress {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background: #333;
-}
-.toast .progress::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #eeeef0;
-}
-.toast .progress-d {
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background: #333;
-  }
-.toast .progress-d::before {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #7f9c7f;
-  }
+  outline-style: none;
 
-/* Animacion de la barra de tiempo */
-/* Aqui puedo modificar el tiempo en el que tarda en mostrarse en pantalla, este debe estar bien vinculado con el TimeOut del codigo en JS */
-.progress.active-m::before {
-  animation: progress 5s linear forwards;
+  font-size: 20px;
+  text-align: center;
+  transition: color 0.2s;
+} */
+
+/* Loader styles */
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #5d5b66;
+  display: grid;
+  place-items: center;
+  transition: opacity 1s, visibility 1s;
 }
-@keyframes progress {
-  100% {
-    right: 100%;
-  }
+.fade {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Slide bar */
+:root {
+  --fondo-color: #181818;
+  --items-color: #202020;
+  --border-color: #383838;
+  --text-color: #e7e7e7;
+}
+
+/* footer {
+  font-size: 60%;
+} */
+
+/* footer nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  position: fixed;
+  border-bottom: 1px solid var(--border-color);
+} */
+nav span i {
+  color: #fff;
+  font-size: 2.7rem;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+aside {
+  background-color: var(--items-color);
+  width: 30rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: hidden;
+  margin-bottom: 59px;
+  transition: 0.4s;
+}
+
+aside:hover {
+  overflow-y: auto;
+}
+.desplegar {
+  transform: translateX(100%);
+}
+.container-svg {
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px;
+  color: var(--text-color);
+}
+
+.container-svg div {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.container-svg div:hover {
+  background-color: #303030;
+}
+
+.container-svg div span {
+  /* margin-left: 15px; */
+  font-size: 1.5rem;
 }

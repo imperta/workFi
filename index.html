@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/toggle.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>workFi</title>
+  </head>
+
+  <body class="light-mode">
+    <!-- Loader de la pagina -->
+    <div class="wrapper">
+      <div class="loader"></div>
+    </div>
+
+    <header>
+      <div class="row-container-mode settings-container">
+        <!-- Ciclos -->
+        <div class="input-container" style="display: none">
+          <label for="cycles-input">Pomodoro cycles </label>
+          <input id="cycles-input" type="number" />
+          <b class="tooltip">
+            <img
+              src="./img/icons/circle-info-solid.svg"
+              alt=""
+              class="info-logo"
+            />
+            <span class="tooltip-box"
+              >Un ciclo en un pomodoro se refiere al proceso completo de trabajo
+              y descanso.</span
+            >
+          </b>
+        </div>
+
+        <!-- Worktime -->
+        <div class="input-container">
+          <button
+            class="button-mode-pom button-mode-selection-w"
+            id="mode-selection-work"
+          >
+            Work time
+          </button>
+          <input id="work-time" type="text" style="display: none" />
+          <!-- <b class="tooltip">
+            <img
+              class="info-logo"
+              src="./img/icons/circle-info-solid.svg"
+              alt=""
+            />
+            <span class="tooltip-box"
+              >Se refiere a la duración en la que te enfocas en una tarea
+              determinada antes de tomar un breve descanso.</span
+            >
+          </b> -->
+        </div>
+        <div class="input-container">
+          <button
+            class="button-mode-pom button-mode-selection-s"
+            id="mode-selection-short"
+          >
+            short break
+          </button>
+          <input id="break-time" type="text" style="display: none" />
+          <!-- <b class="tooltip">
+            <img
+              src="./img/icons/circle-info-solid.svg"
+              alt=""
+              class="info-logo"
+            />
+            <span class="tooltip-box"
+              >Se refiere al breve descanso que se toma después de completar un
+              período de trabajo de 25 minutos.</span
+            >
+          </b> -->
+        </div>
+        <div class="input-container">
+          <button
+            class="button-mode-pom button-mode-selection-l"
+            id="mode-selection-long"
+          >
+            long break
+          </button>
+          <input id="rest-time" type="text" style="display: none" />
+          <!-- <b class="tooltip">
+            <img
+              src="./img/icons/circle-info-solid.svg"
+              alt=""
+              class="info-logo"
+            />
+            <span class="tooltip-box"
+              >El tiempo de descanso largo en un pomodoro se refiere al período
+              de descanso más prolongado que se toma después de completar cuatro
+              ciclos de trabajo y descanso.</span
+            >
+          </b> -->
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="pomodoro-container" id="mode">
+        <div class="row-container clock-container">
+          <h2 id="clock">25:00</h2>
+        </div>
+        <div class="buttons-options">
+          <div class="row-container resume-container">
+            <button id="resume-button" style="display: none">resume</button>
+          </div>
+          <div class="row-container start-container">
+            <button id="start-button" style="display: none block">start</button>
+          </div>
+          <div class="row-container pause-container">
+            <button id="pause-button" style="display: none block" disabled>
+              pause
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div id="container">
+        <button id="reset-button" class="toast-button">reset</button>
+        <button class="toggle" id="button-mode">
+          <img class="active-d" src="./img/icons/moon-solid.svg" alt="" /><img
+            class="active-w"
+            src="./img/icons/sun-solid.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <!-- Menu Desplegable-->
+      <!-- <nav>
+        <span id="open-close">
+          <i class="bx bx-menu"></i>
+        </span>
+      </nav>
+      <aside id="aside">
+        <div class="container-svg">
+          <div><span>INTRO</span></div>
+          <div><span>INTRO</span></div>
+          <div><span>INTRO</span></div>
+        </div>
+        <div class="container-svg">
+          <div><span>INTRO</span></div>
+          <div><span>INTRO</span></div>
+          <div><span>INTRO</span></div>
+        </div>
+        <div class="container-svg">
+          <div><span>INTRO</span></div>
+          <div><span>INTRO</span></div>
+          <div><span>INTRO</span></div>
+        </div>
+      </aside> -->
+    </footer>
+  </body>
+  <script src="./js/logic.js"></script>
+  <script src="./js/toggle.js"></script>
+  <!-- <script src="../js/defaultvalues.js"></script> -->
+</html>

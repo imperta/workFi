@@ -56,6 +56,25 @@ window.onload = () => {
   let breakTimeInput = document.getElementById("break-time");
   let restTimeInput = document.getElementById("rest-time");
 
+  // Variables de modos
+  // ID
+  let workTimeMode = document.getElementById("mode-selection-work");
+  let shortTimeMode = document.getElementById("mode-selection-short");
+  let longTimeMode = document.getElementById("mode-selection-long");
+  // Class
+  let modeActiveClassW = document.querySelector(".button-mode-selection-w");
+  let modeActiveClassS = document.querySelector(".button-mode-selection-s");
+  let modeActiveClassL = document.querySelector(".button-mode-selection-l");
+
+  // Estilos por defecto de modos en barra de navegacion
+  function barStyles() {}
+  if (modeActiveClassW.classList.contains("")) {
+    modeActiveClassW.classList.remove("active");
+  } else {
+    modeActiveClassW.classList.add("active");
+  }
+  barStyles();
+
   // Variables engrupadas
   function populateVariables() {
     console.log("Populated Variables");
@@ -65,46 +84,127 @@ window.onload = () => {
     cyclesGoal = cyclesInput.value;
     timesCompleted = 0;
   }
+
   // Funcion de reiniciar el contador
-  function resetPomodoro() {
+  // function resetPomodoro() {
+  //   clearInterval(interval);
+  //   workTimeInput.value = 25;
+  //   breakTimeInput.value = 5;
+  //   restTimeInput.value = 15;
+  //   // cyclesInput.value = 4;
+  //   startButton.disabled = false;
+  //   currentTime = workTimeInput.value;
+  //   seconds = 0;
+  //   cyclesCompleted = 0;
+  //   updateClock();
+  // }
+
+  // Funcion para el modo de trabajo
+  function workTimeMode_f() {
     clearInterval(interval);
     workTimeInput.value = 25;
     breakTimeInput.value = 5;
     restTimeInput.value = 15;
-    cyclesInput.value = 4;
     startButton.disabled = false;
     currentTime = workTimeInput.value;
     seconds = 0;
     cyclesCompleted = 0;
     updateClock();
+
+    // Secuencias de modo en la barra de navegacion
+    if (modeActiveClassW.classList.contains("")) {
+    } else {
+      modeActiveClassW.classList.add("active");
+      modeActiveClassS.classList.remove("active");
+      modeActiveClassL.classList.remove("active");
+    }
+  }
+  // Funcion para el modo de descanso corto
+  function shortTimeMode_f() {
+    clearInterval(interval);
+    workTimeInput.value = 0;
+    breakTimeInput.value = 5;
+    restTimeInput.value = 15;
+    startButton.disabled = false;
+    currentTime = breakTimeInput.value;
+    seconds = 0;
+    cyclesCompleted = 0;
+    updateClock();
+
+    // Secuencias de modo en la barra de navegacion
+    if (modeActiveClassS.classList.contains("")) {
+    } else {
+      modeActiveClassS.classList.add("active");
+      modeActiveClassL.classList.remove("active");
+      modeActiveClassW.classList.remove("active");
+    }
+  }
+  // Funcion para el modo de descanso largo
+  function longTimeMode_f() {
+    clearInterval(interval);
+    workTimeInput.value = 0;
+    breakTimeInput.value = 0;
+    restTimeInput.value = 15;
+    startButton.disabled = false;
+    currentTime = breakTimeInput.value;
+    seconds = 0;
+    cyclesCompleted = 0;
+    updateClock();
+
+    // Secuencias de modo en la barra de navegacion
+    if (modeActiveClassL.classList.contains("")) {
+    } else {
+      modeActiveClassL.classList.add("active");
+      modeActiveClassS.classList.remove("active");
+      modeActiveClassW.classList.remove("active");
+    }
   }
 
   // Button Functionality
+
+  // Modos de pomodoro
+  workTimeMode.onclick = () => {
+    workTimeMode_f();
+    // console.log("work time mode");
+  };
+
+  shortTimeMode.onclick = () => {
+    shortTimeMode_f();
+    // console.log("Short time mode");
+  };
+
+  longTimeMode.onclick = () => {
+    longTimeMode_f();
+    // console.log("Long time mode");
+  };
+
+  // Botones de pomodoro
   startButton.onclick = () => {
     populateVariables();
     startPomodoro();
-    startButton.disabled = true;
     pauseButton.disabled = false;
+    pauseButton.style.display = "block";
+    startButton.style.display = "none";
   };
 
   pauseButton.onclick = () => {
     clearInterval(interval);
+    pauseButton.style.display = "none";
     resumeButton.style.display = "block";
     startButton.style.display = "none";
-    resumeButton.style.display = "block";
     resumeButton.disabled = false;
   };
   resumeButton.onclick = () => {
     timer();
-    resumeButton.style.display = "block";
+    pauseButton.style.display = "block";
+    resumeButton.style.display = "none";
     resumeButton.disabled = true;
   };
   resetButton.onclick = () => {
-    resetPomodoro();
+    workTimeMode_f();
     startButton.style.display = "block";
+    pauseButton.style.display = "none";
     resumeButton.style.display = "none";
-    pauseButton.style.display = "block";
-    pauseButton.disabled = true;
     console.log("Pomodoro Reseted");
   };
   function startPomodoro() {
@@ -154,45 +254,29 @@ window.onload = () => {
 };
 
 // Mensaje tooltip
-const tooltips = document.querySelectorAll('.tooltip');
+// const tooltips = document.querySelectorAll(".tooltip");
 
-tooltips.forEach((tooltip) => {
-  tooltip.addEventListener('mouseenter', () => {
-    tooltip.querySelector('.tooltip-box').style.display = 'block';
-  });
+// tooltips.forEach((tooltip) => {
+//   tooltip.addEventListener("mouseenter", () => {
+//     tooltip.querySelector(".tooltip-box").style.display = "block";
+//   });
 
-  tooltip.addEventListener('mouseleave', () => {
-    tooltip.querySelector('.tooltip-box').style.display = 'none';
-  });
+//   tooltip.addEventListener("mouseleave", () => {
+//     tooltip.querySelector(".tooltip-box").style.display = "none";
+//   });
+// });
+
+//Animacion de loader de la pagina
+const fadeOut = () => {
+  const loaderWrapper = document.querySelector(".wrapper");
+  loaderWrapper.classList.add("fade");
+};
+window.addEventListener("load", fadeOut);
+
+// Animacion de slider
+const $openClose = document.getElementById("open-close"),
+  $aside = document.getElementById("aside");
+
+$openClose.addEventListener("click", () => {
+  $aside.classList.toggle("desplegar");
 });
-
-
-
-// Mensajes temporales
-const button = document.querySelector(".toast-button"),
-      toast = document.querySelector(".toast")
-      closeIcon = document.querySelector(".close"),
-      progress = document.querySelector(".progress");
-
-      button.addEventListener("click", () => {
-        toast.classList.add("active-m");
-        progress.classList.add("active-m");
-
-        setTimeout(() =>{
-          toast.classList.remove("active-m");
-        }, 5000); //1s = 1000 milisegundos
-
-        setTimeout(() =>{
-          progress.classList.remove("active-m");
-        }, 5300);
-      });
-
-      closeIcon.addEventListener("click", () => {
-        toast.classList.remove("active-m");
-
-        setTimeout(() =>{
-          progress.classList.remove("active-m");
-        }, 300);
-      });
-
-
