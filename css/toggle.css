@@ -7,13 +7,10 @@ body {
   bottom: 0%;
   right: 0%;
   /* Posicion de los botones */
-  transform: translate(-15%, -50%);
   filter: invert();
-  display: flex;
 }
 
 .toggle {
-  right: 0;
   border-style: none;
   width: 5rem;
   height: 3rem;

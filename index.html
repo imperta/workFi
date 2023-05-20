@@ -71,7 +71,7 @@
     </main>
 
     <footer>
-      <div id="container">
+      <div id="container" class="container-footer-b">
         <button class="toggle" id="button-mode">
           <img class="active-d" src="./img/icons/moon-solid.svg" alt="" /><img
             class="active-w"
@@ -79,17 +79,22 @@
             alt=""
           />
         </button>
+        <!-- Menu Desplegable-->
+        <nav id="open-close">
+          <button class="button-slide">
+            <img src="./img/icons/three-dots-vertical.svg" alt="" />
+          </button>
+        </nav>
       </div>
-      <!-- Menu Desplegable-->
-      <nav>
-        <span id="open-close">
-          <i class="bx bx-menu"></i>
-        </span>
-      </nav>
+
       <aside id="aside" class="cerrado">
         <div class="container-svg">
           <div>
-            <i class="bx bx-timer"></i>
+            <img
+              class="icons-title icons-slide"
+              src="./img/icons/clock-history.svg"
+              alt=""
+            />
             <span>Timer (minutes)</span>
           </div>
           <!-- Ciclos -->
@@ -97,87 +102,72 @@
             <!-- Worktime -->
             <div class="slide-config">
               <label for="work-input">Pomodoro</label>
-              <input id="work-time" type="text" />
-              <!-- <b class="tooltip">
-                <img
-                  class="info-logo"
-                  src="./img/icons/circle-info-solid.svg"
-                  alt=""
-                />
-                <span class="tooltip-box"
-                  >Se refiere a la duración en la que te enfocas en una tarea
-                  determinada antes de tomar un breve descanso.</span
-                >
-              </b> -->
+              <input id="work-time" type="text" value="25" />
             </div>
             <!-- Rest Time -->
             <div class="slide-config">
               <label for="rest-input">Rest time </label>
-              <input id="rest-time" type="text" />
-              <!-- <b class="tooltip">
-                <img
-                  src="./img/icons/circle-info-solid.svg"
-                  alt=""
-                  class="info-logo"
-                />
-                <span class="tooltip-box"
-                  >El tiempo de descanso largo en un pomodoro se refiere al
-                  período de descanso más prolongado que se toma después de
-                  completar cuatro ciclos de trabajo y descanso.</span
-                >
-              </b> -->
+              <input id="rest-time" type="text" value="5" />
             </div>
             <!-- Break time -->
             <div class="slide-config">
               <label for="break-input">Break Time </label>
-              <input id="break-time" type="text" />
-              <!-- <b class="tooltip">
-                <img
-                  src="./img/icons/circle-info-solid.svg"
-                  alt=""
-                  class="info-logo"
-                />
-                <span class="tooltip-box"
-                  >Se refiere al breve descanso que se toma después de completar
-                  un período de trabajo de 25 minutos.</span
-                >
-              </b> -->
+              <input id="break-time" type="text" value="15" />
             </div>
 
             <!-- Ciclos de pomodoro -->
             <div class="slide-config">
               <label for="cycles-input">Cycles</label>
-              <input id="cycles-input" type="number" />
-              <!-- <b class="tooltip">
-                <img
-                  src="./img/icons/circle-info-solid.svg"
-                  alt=""
-                  class="info-logo"
-                />
-                <span class="tooltip-box"
-                  >Un ciclo en un pomodoro se refiere al proceso completo de
-                  trabajo y descanso.</span
-                >
-              </b> -->
+              <input id="cycles-input" type="number" value="2" />
             </div>
           </div>
-          <button id="reset-button" class="toast-button">reset</button>
+          <div class="reset-space">
+            <button id="reset-button" class="reset-button">Reset</button>
+          </div>
         </div>
 
         <div class="container-svg">
           <div>
-            <i class="bx bx-cheese"></i>
+            <img
+              class="icons-title icons-slide"
+              src="./img/icons/people.svg"
+              alt=""
+            />
             <span>Support me</span>
           </div>
           <div class="buttons-support">
-            <button>Buy me a coffee</button>
-            <button>Twitter</button>
+            <button>
+              <img
+                class="icons-slide"
+                src="./img/icons/cup-hot.svg"
+                alt="coffee-icon"
+              />
+              <a target="_blank" href="https://bmc.link/perta"
+                >Buy me a coffee</a
+              >
+            </button>
+            <button>
+              <img
+                class="icons-slide"
+                src="./img/icons/twitter.svg"
+                alt="twitter-icon"
+              />
+              <a target="_blank" href="https://twitter.com/ohjust_p">Twitter</a>
+            </button>
           </div>
         </div>
         <div class="container-svg">
           <div>
-            <i class="bx bx-edit"></i>
-            <span>Patch Notes</span>
+            <button class="buttons-slider">
+              <a target="_blank" href=""
+                ><img
+                  class="icons-title icons-slide"
+                  src="./img/icons/journal-code.svg"
+                  alt=""
+                />
+                <span>Patch Notes</span></a
+              >
+            </button>
           </div>
         </div>
       </aside>

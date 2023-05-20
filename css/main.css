@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700;900&display=swap");
 
+/* Estilos por defecto */
 body {
   font-family: "Inter", sans-serif;
 }
@@ -7,6 +8,10 @@ body {
 * {
   padding: 0;
   margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #fff;
 }
 
 /* Variables de algunos estilos repetitivos */
@@ -38,6 +43,8 @@ body {
 /* Diseño de reloj */
 .clock-container {
   margin-top: 1.7rem;
+  display: flex;
+  justify-content: center;
 }
 #clock {
   padding: 1rem;
@@ -80,23 +87,29 @@ body {
   border-radius: 10px;
 }
 #reset-button {
-  margin-right: 2rem;
-  padding: var(--button-padding);
-  font-size: var(--button-text-size);
-  color: var(--text-button-color);
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.3rem;
+  font-family: "Inter", sans-serif;
+
   cursor: pointer;
   border-radius: 10px;
   border-style: none;
-  background-color: var(--button-color);
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  background-color: #8b879b;
+  box-shadow: rgba(255, 255, 255, 0.514) 1px 1px 10px;
+
+  color: var(--text-button-color-hover);
   transition: background-color 0.2s;
-  font-weight: bolder;
+}
+.reset-space {
+  display: flex;
+  justify-content: center;
 }
 #reset-button:hover {
-  background-color: var(--button-color-hover);
-  color: var(--text-button-color-hover);
+  background-color: #696674;
 }
 
+/* Barra de modos */
 .row-container-mode {
   display: flex;
   justify-content: center;
@@ -111,7 +124,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .button-mode-pom {
   color: #000000;
   font-weight: 700;
@@ -127,7 +139,7 @@ body {
   font-family: "Inter";
   transition: background-color 0.5s ease-out;
 }
-
+/* Estilos activos (al dar click) de la barra de modos */
 .button-mode-selection-w.active {
   border-radius: 1rem;
   background-color: #8b879b;
@@ -143,7 +155,7 @@ body {
   background-color: #8b879b;
   color: #111111;
 }
-
+/* Estilos por defecto en la barra de modos */
 .button-mode-selection-w {
   color: #000000;
   padding: 0.7rem;
@@ -155,40 +167,6 @@ body {
 .button-mode-selection-l {
   color: #000000;
   padding: 0.7rem;
-}
-
-.info-logo {
-  height: 15px;
-  filter: invert();
-}
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-.tooltip .tooltip-box {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip box */
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -6rem;
-  width: 200px; /* Ancho del cuadro donde esta el mensaje */
-
-  /* Fade in the tooltip */
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.tooltip:hover .tooltip-box {
-  visibility: visible;
-  opacity: 1;
 }
 
 /* Loader styles */
@@ -207,55 +185,15 @@ body {
 }
 
 /* Slide bar */
-:root {
-  --fondo-color: #181818;
-  --items-color: #202020;
-  --border-color: #383838;
-  --text-color: #e7e7e7;
-}
 
-/* Tamaño de boton de slider */
-nav span i {
-  color: #fff;
-  font-size: 5rem;
-  cursor: pointer;
-
-  z-index: 1;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-/*Estilos de slide */
-aside {
-  background-color: #000000;
-  opacity: 100%;
-  width: 30rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: hidden;
-  margin-bottom: 5px;
-  transition: 0.4s;
-  padding-top: 1.3rem;
-}
-.slide-config {
-  justify-content: center;
+.container-footer-b {
   display: flex;
-  flex-wrap: wrap;
+  z-index: 1;
+  justify-content: center;
+  padding: 1rem;
 }
-aside:hover {
-  overflow-y: auto;
-}
-.desplegar {
-  transform: translateX(100%);
-}
-.cerrado {
-  display: none;
-}
+/* Tamaño del contenido dentro del slider */
 .container-svg {
-  /* border-bottom: 1px solid var(--border-color); */
   padding: 1rem;
   color: #fff;
 }
@@ -265,14 +203,59 @@ aside:hover {
   padding: 0.5rem;
 }
 .container-svg div span {
-  /* margin-left: 15px; */
   font-size: 1.3rem;
+}
+
+/* Tamaño de boton de slider */
+.button-slide img {
+  color: #fff;
+  height: 1rem;
+}
+.button-slide {
+  cursor: pointer;
+  border-radius: 10px;
+  height: 100%;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+/*Estilos de slide */
+aside {
+  background-color: #000000;
+  opacity: 90%;
+  backdrop-filter: blur(1px);
+  width: 30rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: hidden;
+  transition: 0.4s;
+  padding-top: 1.3rem;
+  border-radius: 1rem 0px 0px 1rem;
+}
+.slide-config {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+aside:hover {
+  overflow-y: auto;
+}
+/* Estilos que se modifican en el archivo de JS */
+.desplegar {
+  transition: transform 0.5s;
+  transform: translateX(100%);
+}
+.cerrado {
+  display: none;
 }
 /* Ajustes de inputs */
 input {
   background-color: #8b879b;
   color: #2d2d2d;
-  margin-top: 0.4rem;
+  margin-top: 1rem;
   padding: 0.6rem;
   width: 4rem;
   border: none;
@@ -283,7 +266,6 @@ input {
   font-size: 1.4rem;
   font-weight: 700;
   text-align: center;
-  /* transition: color 0.2s; */
 }
 label {
   color: #eae6e5;
@@ -293,19 +275,14 @@ label {
   text-transform: capitalize;
 }
 
-/* Botones soporte */
-.buttons-support {
-  justify-content: center;
-  display: flex;
-  padding: 20px;
-}
+/* Botones de support me */
 .buttons-support button {
   background-color: #8b879b;
-  color: #000000;
+  color: #fff;
 
   border-radius: 0.7rem;
   border-style: none;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   text-align: center;
   width: 90%;
   padding: 0.5rem;
@@ -315,4 +292,102 @@ label {
 }
 .buttons-support button:hover {
   filter: invert(100%);
+}
+/* Estilos de iconos dentro del slider */
+.icons-slide {
+  height: 1rem;
+  filter: invert();
+  padding-right: 0.6rem;
+}
+/* Iconos de cada segmento */
+.icons-title {
+  height: 1.5rem;
+  margin-right: 0.4rem;
+}
+/* Patch notes */
+.buttons-slider {
+  right: 0%;
+  padding: 1.4rem;
+  width: 100%;
+  font-size: 1.3rem;
+  font-family: "Inter", sans-serif;
+
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #8b879b;
+  box-shadow: rgba(255, 255, 255, 0.514) 1px 1px 10px;
+}
+.buttons-slider img {
+  vertical-align: text-top;
+}
+
+/* Tamaños de pantallas responsive */
+@media only screen and (min-width: 320px) and (max-width: 530px) {
+  /* Estilos de pomodoro */
+  .pomodoro-container {
+    padding: 1rem;
+    width: 17rem;
+    height: 15rem;
+  }
+
+  /* Diseño de reloj */
+  .clock-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2rem;
+  }
+  #clock {
+    padding: 1rem;
+    font-size: 4.5rem;
+    margin-bottom: 0.6rem;
+  }
+  /* Barra de modos */
+  .row-container-mode {
+    width: 26rem;
+  }
+  .button-mode-pom {
+    font-size: 1.1rem;
+    letter-spacing: 0px;
+    margin: 0.6rem;
+  }
+  /* Estilos por defecto en la barra de modos */
+  /* Slider */
+  aside {
+    padding-top: 1.5rem;
+    border-radius: 0em 0px 0px 0rem;
+  }
+  /* Ajustes de inputs */
+  input {
+    margin-top: 1rem;
+    padding: 0.6rem;
+    width: 3rem;
+    font-size: 1.4rem;
+  }
+  label {
+    font-size: 1.2rem;
+  }
+
+  /* Botones de support me */
+  .buttons-support button {
+    font-size: 1.1rem;
+    width: 90%;
+    padding: 1.3rem;
+  }
+  /* Estilos de iconos dentro del slider */
+  .icons-slide {
+    height: 1rem;
+    filter: invert();
+    padding-right: 0.6rem;
+  }
+  /* Iconos de cada segmento */
+  .icons-title {
+    height: 2rem;
+    margin-right: 0.2rem;
+  }
+  /* Patch notes */
+  .buttons-slider {
+    padding: 1.4rem;
+    font-size: 1.3rem;
+  }
 }
