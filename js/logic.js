@@ -8,6 +8,27 @@ window.onload = () => {
   let cyclesCompleted = 0;
   let interval;
 
+  // Timer
+  let currentTime; //Minutos Seteados
+  let seconds = 0;
+
+  function timer() {
+    if (currentTime > 0 || seconds > 0) {
+      if (seconds == 0) {
+        seconds = 59;
+        currentTime--;
+      } else {
+        seconds--;
+      }
+      updateClock();
+      // console.log(currentTime, seconds);
+      interval = setTimeout(timer, 1000);
+    } else {
+      pomodoroController();
+      //   console.log("El Temporizador Terminó");
+    }
+  }
+
   function pomodoroController() {
     if (isRestTime()) {
       cyclesCompleted++;
@@ -45,6 +66,21 @@ window.onload = () => {
     return timesCompleted == 7;
   }
 
+  // Función para inicializar el pomodoro
+  function startPomodoro() {
+    populateVariables();
+    pomodoroController();
+  }
+  // Variables engrupadas
+  function populateVariables() {
+    console.log("Populated Variables");
+    workTime = workTimeInput.value;
+    breakTime = breakTimeInput.value;
+    restTime = restTimeInput.value;
+    cyclesGoal = cyclesInput.value;
+    timesCompleted = 0;
+  }
+
   // Coneccion con el Front-end
   let clock = document.getElementById("clock");
   let cyclesInput = document.getElementById("cycles-input");
@@ -74,16 +110,6 @@ window.onload = () => {
     modeActiveClassW.classList.add("active");
   }
   barStyles();
-
-  // Variables engrupadas
-  function populateVariables() {
-    console.log("Populated Variables");
-    workTime = workTimeInput.value;
-    breakTime = breakTimeInput.value;
-    restTime = restTimeInput.value;
-    cyclesGoal = cyclesInput.value;
-    timesCompleted = 0;
-  }
 
   // Funcion de reiniciar el contador
   // function resetPomodoro() {
@@ -161,23 +187,6 @@ window.onload = () => {
   }
 
   // Button Functionality
-
-  // Modos de pomodoro
-  workTimeMode.onclick = () => {
-    workTimeMode_f();
-    // console.log("work time mode");
-  };
-
-  shortTimeMode.onclick = () => {
-    shortTimeMode_f();
-    // console.log("Short time mode");
-  };
-
-  longTimeMode.onclick = () => {
-    longTimeMode_f();
-    // console.log("Long time mode");
-  };
-
   // Botones de pomodoro
   startButton.onclick = () => {
     populateVariables();
@@ -213,63 +222,39 @@ window.onload = () => {
     longTimeMode.disabled = false;
     console.log("Pomodoro Reseted");
   };
-  function startPomodoro() {
-    console.log("Started Pomodoro");
-    pomodoroController();
-  }
+
+  // Modos de pomodoro
+  workTimeMode.onclick = () => {
+    clearInterval(interval);
+    workTimeMode_f();
+    // console.log("work time mode");
+  };
+
+  shortTimeMode.onclick = () => {
+    clearInterval(interval);
+    shortTimeMode_f();
+    // console.log("Short time mode");
+  };
+
+  longTimeMode.onclick = () => {
+    clearInterval(interval);
+    longTimeMode_f();
+    // console.log("Long time mode");
+  };
 
   // Clock y fix de numeros
   let clockMinutes;
   let clockSeconds;
 
   function updateClock() {
-    clockMinutes = formatNumbers(currentTime);
-    clockSeconds = formatNumbers(seconds);
-    clock.innerHTML = clockMinutes + ":" + clockSeconds;
+    const clock = document.getElementById("clock");
+    const clockMinutes = formatNumbers(currentTime);
+    const clockSeconds = formatNumbers(seconds);
+    clock.innerHTML = `${clockMinutes}:${clockSeconds}`;
   }
   function formatNumbers(time) {
-    let formattedDigits;
-    if (time < 10) {
-      formattedDigits = "0" + time;
-    } else {
-      formattedDigits = time;
-    }
-    return formattedDigits;
+    return time < 10 ? `0${time}` : time;
   }
-
-  // Timer
-  let currentTime; //Minutos Seteados
-  let seconds = 0;
-
-  function timer() {
-    if (currentTime > 0 || seconds > 0) {
-      if (seconds == 0) {
-        seconds = 59;
-        currentTime--;
-      } else {
-        seconds--;
-      }
-      updateClock();
-      // console.log(currentTime, seconds);
-      interval = setTimeout(timer, 1000);
-    } else {
-      pomodoroController();
-      //   console.log("El Temporizador Terminó");
-    }
-  }
-
-  // Mensaje tooltip
-  const tooltips = document.querySelectorAll(".tooltip");
-
-  tooltips.forEach((tooltip) => {
-    tooltip.addEventListener("mouseenter", () => {
-      tooltip.querySelector(".tooltip-box").style.display = "block";
-    });
-
-    tooltip.addEventListener("mouseleave", () => {
-      tooltip.querySelector(".tooltip-box").style.display = "none";
-    });
-  });
 
   // Funcion para evitar que se abra el slider automaticamente
   function sliderNow() {
@@ -291,12 +276,6 @@ window.onload = () => {
       document.body.classList.toggle("overflow-hidden");
       document.getElementById("aside").style.display = "block";
       aside.classList.toggle("desplegar");
-    });
-    window.addEventListener("resize", function () {
-      if (window.innerWidth > 768) {
-        document.body.classList.remove("overflow-hidden");
-        aside.classList.remove("desplegar");
-      }
     });
   }
   sliderNow();

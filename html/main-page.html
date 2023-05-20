@@ -4,153 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/page.css" />
     <link rel="stylesheet" href="../css/toggle.css" />
-    <link rel="stylesheet" href="../tailwind.css">
     <title>workFi</title>
   </head>
 
   <body class="light-mode">
     <main>
-        <button
-  id="theme-toggle"
-  type="button"
-  class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
->
-  <svg
-    id="theme-toggle-dark-icon"
-    class="w-5 h-5 hidden"
-    fill="currentColor"
-    viewBox="0 0 20 20"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-    ></path>
-  </svg>
-  <svg
-    id="theme-toggle-light-icon"
-    class="w-5 h-5 hidden"
-    fill="currentColor"
-    viewBox="0 0 20 20"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-    ></path>
-  </svg>
-</button>
-
-      <!-- <div class="pomodoro-container" id="mode">
-        
-        <div class="row-container clock-container">
-          <h2 id="clock">25:00</h2>
-        </div>
-        <div class="buttons-options">
-          <div class="row-container resume-container">
-            <button id="resume-button" style="display: none">Resume</button>
-          </div>
-          <div class="row-container start-container">
-            <button id="start-button" style="display: none block">Start</button>
-          </div>
-          <div class="row-container pause-container">
-            <button id="pause-button" style="display: none block" disabled>
-              Pause
-            </button>
-          </div>
-        </div> -->
-        <!-- <div class="row-container settings-container">
-          <div class="input-container">
-            <label for="cycles-input">Pomodoro cycles </label>
-            <input id="cycles-input" type="number" />
-            <b class="tooltip">
-              <img
-                src="../img/icons/circle-info-solid.svg"
-                alt=""
-                class="info-logo"
-              />
-              <span class="tooltip-box"
-                >Un ciclo en un pomodoro se refiere al proceso completo de
-                trabajo y descanso.</span
-              >
-            </b>
-          </div>
-          <div class="input-container">
-            <label for="work-time">Work time </label>
-            <input id="work-time" type="text" />
-            <b class="tooltip">
-              <img
-                class="info-logo"
-                src="../img/icons/circle-info-solid.svg"
-                alt=""
-              />
-              <span class="tooltip-box"
-                >Se refiere a la duración en la que te enfocas en una tarea
-                determinada antes de tomar un breve descanso.</span
-              >
-            </b>
-          </div>
-          <div class="input-container">
-            <label for="break-time">Break time</label>
-            <input id="break-time" type="text" />
-            <b class="tooltip">
-              <img
-                src="../img/icons/circle-info-solid.svg"
-                alt=""
-                class="info-logo"
-              />
-              <span class="tooltip-box"
-                >Se refiere al breve descanso que se toma después de completar
-                un período de trabajo de 25 minutos.</span
-              >
-            </b>
-          </div>
-          <div class="input-container">
-            <label for="rest-time">Rest Time </label>
-            <input id="rest-time" type="text" />
-            <b class="tooltip">
-              <img
-                src="../img/icons/circle-info-solid.svg"
-                alt=""
-                class="info-logo"
-              />
-              <span class="tooltip-box"
-                >El tiempo de descanso largo en un pomodoro se refiere al
-                período de descanso más prolongado que se toma después de
-                completar cuatro ciclos de trabajo y descanso.</span
-              >
-            </b>
-          </div>
-        </div>
-      </div>
-
-      <div id="container">
-        <button id="reset-button" class="toast-button">Reset</button>
-        <button class="toggle " id="button-mode">
-          <img class="active-d" src="../img/icons/moon-solid.svg" alt="" /><img
+      <div id="container" class="container-footer-b">
+        <button class="toggle" id="button-mode">
+          <img class="active-d" src="../img/icons/moon-solid.svg" alt="" />
+          <img
             class="active-w"
             src="../img/icons/sun-solid.svg"
             alt=""
+            style="display: none"
           />
         </button>
-      </div>
-      <div class="toast toast-dark">
-        <div class="toast-content">  
-          <i class="check"><img src="../img/icons/check-solid.svg" alt="" style="filter:invert()"></i>
-          <div class="message">
-            <span class="text text-1">Success</span>
-            <span class="text text-1">Pomodoro Reset</span>
-          </div>
-        </div>
-        <i class="xmark close">Close</i>
-        <div class="progress progress-d"></div>
-      </div>  -->
+          
     </main>
-    <script src="../path/to/flowbite/dist/flowbite.bundle.js"></script>
   </body>
+  <script src="../js/toggle.js"></script>
   <!-- <script src="../js/logic.js"></script>
-  <script src="../js/toggle.js"></script> -->
-  <!-- <script src="../js/defaultvalues.js"></script> -->
+<script src="../js/defaultvalues.js"></script> -->
 </html>
