@@ -273,7 +273,6 @@ window.onload = () => {
 
     // Modo para abrir el slider
     openClose.addEventListener("click", () => {
-      document.body.classList.toggle("overflow-hidden");
       document.getElementById("aside").style.display = "block";
       aside.classList.toggle("desplegar");
     });

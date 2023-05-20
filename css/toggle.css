@@ -27,20 +27,22 @@ body {
 }
 
 /* Cambio de texto */
-#mode.active .active-w {
-  display: none;
-}
-#mode.active .active-d {
+/* .active-w .active {
+  display: block;
+} */
+/* .active-d .active {
   display: flex;
   background-image: url(../img/icons/moon-solid.svg);
-}
+} */
 .active-d {
   margin-left: 32px;
+  margin-right: 32px;
   height: 20px;
-  display: none;
+  /* display: none; */
 }
 .active-w {
-  margin-left: 0px;
+  margin-left: 32px;
+  margin-right: 32px;
   height: 20px;
 }
 

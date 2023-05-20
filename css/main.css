@@ -31,7 +31,7 @@ a {
   height: 15rem;
   border-radius: 2rem;
   background-color: #c2bdd3;
-  box-shadow: #000000 0.1rem 0.1rem 2rem;
+  box-shadow: #616161 0px 0px 1rem;
   /* text-align: center; */
   /* Centrado de contenido */
   position: absolute;
@@ -229,7 +229,6 @@ aside {
   top: 0;
   right: 0;
   bottom: 0;
-  overflow-y: hidden;
   transition: 0.4s;
   padding-top: 1.3rem;
   border-radius: 1rem 0px 0px 1rem;
