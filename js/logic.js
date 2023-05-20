@@ -281,7 +281,7 @@ window.onload = () => {
       aside.classList.remove("cerrado");
       aside.classList.add("desplegar");
     } else {
-      aside.classList.remove("desplegar");
+      aside.classList.add("desplegar");
     }
   }
   openSlider();
