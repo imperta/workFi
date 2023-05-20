@@ -271,33 +271,35 @@ window.onload = () => {
     });
   });
 
-  // Animacion de slider
-  const openClose = document.getElementById("open-close"),
-    aside = document.getElementById("aside");
-
   // Funcion para evitar que se abra el slider automaticamente
-  function openSlider() {
-    if (aside.classList.contains("cerrado")) {
-      aside.classList.remove("cerrado");
-      aside.classList.add("desplegar");
-    } else {
-      aside.classList.add("desplegar");
+  function sliderNow() {
+    // Animacion de slider
+    const openClose = document.getElementById("open-close"),
+      aside = document.getElementById("aside");
+    function openSlider() {
+      if (aside.classList.contains("cerrado")) {
+        aside.classList.remove("cerrado");
+        aside.classList.add("desplegar");
+      } else {
+        aside.classList.add("desplegar");
+      }
     }
-  }
-  openSlider();
+    openSlider();
 
-  // Modo para abrir el slider
-  openClose.addEventListener("click", () => {
-    document.body.classList.toggle("overflow-hidden");
-    document.getElementById("aside").style.display = "block";
-    aside.classList.toggle("desplegar");
-  });
-  // window.addEventListener("resize", function () {
-  //   if (window.innerWidth > 768) {
-  //     document.body.classList.remove("overflow-hidden");
-  //     aside.classList.remove("desplegar");
-  //   }
-  // });
+    // Modo para abrir el slider
+    openClose.addEventListener("click", () => {
+      document.body.classList.toggle("overflow-hidden");
+      document.getElementById("aside").style.display = "block";
+      aside.classList.toggle("desplegar");
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        document.body.classList.remove("overflow-hidden");
+        aside.classList.remove("desplegar");
+      }
+    });
+  }
+  sliderNow();
 };
 //Animacion de loader de la pagina
 const fadeOut = () => {
