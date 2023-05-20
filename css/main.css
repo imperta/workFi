@@ -250,9 +250,6 @@ aside:hover {
   display: none;
 } */
 
-.overflow-hidden {
-  overflow-x: hidden;
-}
 /* Ajustes de inputs */
 input {
   background-color: #8b879b;
@@ -278,6 +275,11 @@ label {
 }
 
 /* Botones de support me */
+.buttons-support {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
 .buttons-support button {
   background-color: #8b879b;
   color: #fff;
@@ -286,9 +288,9 @@ label {
   border-style: none;
   font-size: 1.1rem;
   text-align: center;
-  width: 90%;
-  padding: 0.5rem;
-  margin-right: 1rem;
+  width: 46%;
+  padding: 1.3rem;
+
   cursor: pointer;
   transition: filter 0.3s;
 }
@@ -356,7 +358,7 @@ label {
   /* Estilos por defecto en la barra de modos */
   /* Slider */
   aside {
-    width: 28rem;
+    width: 26.5rem;
     padding-top: 1.5rem;
     border-radius: 0em 0px 0px 0rem;
   }
@@ -372,20 +374,25 @@ label {
   }
 
   /* Botones de support me */
+  .buttons-support {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+  }
   .buttons-support button {
     font-size: 1rem;
-    width: 90%;
+    width: 46%;
     padding: 1rem;
   }
   /* Estilos de iconos dentro del slider */
   .icons-slide {
     height: 1rem;
     filter: invert();
-    padding-right: 0.6rem;
+    padding-right: 0.2rem;
   }
   /* Iconos de cada segmento */
   .icons-title {
-    height: 2rem;
+    height: 1.6rem;
     margin-right: 0.2rem;
   }
   /* Patch notes */
