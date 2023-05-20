@@ -288,10 +288,17 @@ window.onload = () => {
 
   // Modo para abrir el slider
   openClose.addEventListener("click", () => {
+    document.body.classList.toggle("overflow-hidden");
+    document.getElementById("aside").style.display = "block";
     aside.classList.toggle("desplegar");
   });
+  // window.addEventListener("resize", function () {
+  //   if (window.innerWidth > 768) {
+  //     document.body.classList.remove("overflow-hidden");
+  //     aside.classList.remove("desplegar");
+  //   }
+  // });
 };
-
 //Animacion de loader de la pagina
 const fadeOut = () => {
   const loaderWrapper = document.querySelector(".wrapper");

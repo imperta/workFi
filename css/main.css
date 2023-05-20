@@ -230,7 +230,6 @@ aside {
   right: 0;
   bottom: 0;
   overflow-y: hidden;
-  overflow-x: hidden;
   transition: 0.4s;
   padding-top: 1.3rem;
   border-radius: 1rem 0px 0px 1rem;
@@ -247,11 +246,13 @@ aside:hover {
 .desplegar {
   transition: transform 0.5s;
   transform: translateX(100%);
-  overflow-x: hidden;
 }
-.cerrado {
-  overflow-x: hidden;
+/* #aside {
   display: none;
+} */
+
+.overflow-hidden {
+  overflow-x: hidden;
 }
 /* Ajustes de inputs */
 input {
