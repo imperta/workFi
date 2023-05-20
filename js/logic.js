@@ -185,6 +185,9 @@ window.onload = () => {
     pauseButton.disabled = false;
     pauseButton.style.display = "block";
     startButton.style.display = "none";
+    workTimeMode.disabled = true;
+    shortTimeMode.disabled = true;
+    longTimeMode.disabled = true;
   };
 
   pauseButton.onclick = () => {
@@ -205,6 +208,9 @@ window.onload = () => {
     startButton.style.display = "block";
     pauseButton.style.display = "none";
     resumeButton.style.display = "none";
+    workTimeMode.disabled = false;
+    shortTimeMode.disabled = false;
+    longTimeMode.disabled = false;
     console.log("Pomodoro Reseted");
   };
   function startPomodoro() {
