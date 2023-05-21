@@ -1,5 +1,5 @@
 let toggle = document.getElementById("container");
-let toggleContainer = document.getElementById("mode");
+let toggleContainer = document.getElementById("mode-p");
 let buttonScreen = document.getElementById("button-mode");
 let body = document.querySelector("body");
 // Estilo de imagen del modo Light y Dark

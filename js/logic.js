@@ -46,16 +46,16 @@ window.onload = () => {
       currentTime = workTime;
       timesCompleted++;
       timer();
-      console.log(
-        "Time to work! TC:" + timesCompleted + ", cycles:" + cyclesCompleted
-      );
+      // console.log(
+      //   "Time to work! TC:" + timesCompleted + ", cycles:" + cyclesCompleted
+      // );
     } else {
       currentTime = breakTime;
       timesCompleted++;
       timer();
-      console.log(
-        "Time to break! TC:" + timesCompleted + ", cycles:" + cyclesCompleted
-      );
+      // console.log(
+      //   "Time to break! TC:" + timesCompleted + ", cycles:" + cyclesCompleted
+      // );
     }
   }
 
@@ -111,20 +111,6 @@ window.onload = () => {
   }
   barStyles();
 
-  // Funcion de reiniciar el contador
-  // function resetPomodoro() {
-  //   clearInterval(interval);
-  //   workTimeInput.value = 25;
-  //   breakTimeInput.value = 5;
-  //   restTimeInput.value = 15;
-  //   // cyclesInput.value = 4;
-  //   startButton.disabled = false;
-  //   currentTime = workTimeInput.value;
-  //   seconds = 0;
-  //   cyclesCompleted = 0;
-  //   updateClock();
-  // }
-
   // Funcion para el modo de trabajo
   function workTimeMode_f() {
     clearInterval(interval);
@@ -148,7 +134,7 @@ window.onload = () => {
   // Funcion para el modo de descanso corto
   function shortTimeMode_f() {
     clearInterval(interval);
-    workTimeInput.value = 0;
+    workTimeInput.value = 25;
     breakTimeInput.value = 5;
     restTimeInput.value = 15;
     startButton.disabled = false;
@@ -168,14 +154,11 @@ window.onload = () => {
   // Funcion para el modo de descanso largo
   function longTimeMode_f() {
     clearInterval(interval);
-    workTimeInput.value = 0;
-    breakTimeInput.value = 0;
-    restTimeInput.value = 15;
+    restTimeInput.value = 25;
     startButton.disabled = false;
-    currentTime = breakTimeInput.value;
-    seconds = 0;
-    cyclesCompleted = 0;
+    currentTime = restTimeInput.value;
     updateClock();
+    populateVariables();
 
     // Secuencias de modo en la barra de navegacion
     if (modeActiveClassL.classList.contains("")) {
@@ -256,6 +239,19 @@ window.onload = () => {
     return time < 10 ? `0${time}` : time;
   }
 
+  // Mensaje tooltip
+  const tooltips = document.querySelectorAll(".tooltip");
+
+  tooltips.forEach((tooltip) => {
+    tooltip.addEventListener("mouseenter", () => {
+      tooltip.querySelector(".tooltip-box").style.display = "block";
+    });
+
+    tooltip.addEventListener("mouseleave", () => {
+      tooltip.querySelector(".tooltip-box").style.display = "none";
+    });
+  });
+
   // Funcion para evitar que se abra el slider automaticamente
   function sliderNow() {
     // Animacion de slider
@@ -273,8 +269,15 @@ window.onload = () => {
 
     // Modo para abrir el slider
     openClose.addEventListener("click", () => {
+      document.body.classList.toggle("overflow-hidden");
       document.getElementById("aside").style.display = "block";
       aside.classList.toggle("desplegar");
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        document.body.classList.remove("overflow-hidden");
+        aside.classList.remove("desplegar");
+      }
     });
   }
   sliderNow();
